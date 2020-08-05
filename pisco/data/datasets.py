@@ -7,9 +7,12 @@ import abc
 # =============================================================================
 # ABSTRACT CLASSES
 # =============================================================================
-class Dataset(abc.ABC, torch.utils.data.Dataset):
-    """ The base class of dataset.
+class IterableDataset(abc.ABC, torch.utils.data.IterableDataset):
+    """ Iterable Dataset. """
 
-    """
-    def __init__(self):
-        super(Dataset, self).__init__()
+    def __init__(self, iterable):
+        super(IterableDataset, self).__init__()
+        self.iterable = iterable
+
+    def __iter__(self):
+        return iter(self.iterable)
