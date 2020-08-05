@@ -33,4 +33,3 @@ def test_protein_net_example_init(example_ds):
 
 def test_protein_net_example_iter(example_ds):
     list(example_ds)
-    
